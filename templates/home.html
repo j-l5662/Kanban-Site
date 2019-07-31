@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<h1>KanBan Site</h1>
+<p>Hi {{request.user}}</p>
+<p> {{context}} </p>
+{% endblock %}
+
+{% block content2 %}
+<table border="3" width="100%" style="margin: 5px; margin-left: 5px;">
+  <tr>
+   <th class="column">TODO</th>
+   <th class="column">In-Progress</th>
+   <th class="column">Completed</th>
+  </tr>
+  <!-- for loop to get the data into the  -->
+
+  <tr>
+    <td id = "card_id" align="center">{{ title }}</td>
+    <td id = "description_id" align="center">{{ data }}</td>
+    <td id = "stage_id" align="center">{{stage}}</td>
+  </tr>
+  <tr>
+    <td class = "add_card_link" align="center">Add</td>
+    <td class = "add_card_link" align="center">Add</td>
+    <td class = "add_card_link" align="center">Add</td>
+  </tr>
+</table>
+
+{% endblock %}

@@ -1,7 +1,9 @@
 # Kanban-Site
 
-Check <b>requirements.txt</b> for the Python Dependencies for the project.
+### Install Dependencies
 
-To start project, run the following command
+<b> python -m pip install requirements.txt</b>
 
-<b>$python manage.py runserver</b>
+To start the Django project, run the following command
+
+<b>python manage.py runserver</b>

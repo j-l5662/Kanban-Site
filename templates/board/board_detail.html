@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>KanBan Site</h1>
+<p>Hi {{request.user}}</p>
+<p> {{object}} </p>
+{% endblock %}
+
+{% block content2 %}
+<div class="row">
+  <div class="column" id="col1"><p>Column1</p></div>
+  <div class="column" id="col2"><p>Column2</p></div>
+  <div class="column" id="col3"><p>Column3</p></div>
+</div>
+{% endblock %}

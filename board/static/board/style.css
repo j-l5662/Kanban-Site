@@ -1,0 +1,27 @@
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#column {
+   background-color: lightblue;
+}
+
+table {
+  border: 3px solid black;
+  width: 100%;
+}
+
+th {
+   width: 25%;
+   text-align: center;
+   background-color: lightblue;
+}
+
+#add_card_link {
+  align: center;
+  background-color: black;
+}

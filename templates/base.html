@@ -1,0 +1,22 @@
+{% load static %}
+<!Doctype html>
+<html>
+<head>
+  <title>Kanban Site</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'board/style.css' %}">
+</head>
+<body>
+  {% block content %}
+  {% include 'navbar.html' %}
+  <div class="container">
+  <h1>KanBan Site</h1>
+    <p>This is the first card!</p>
+  </div>
+  {% endblock %}
+  {% block content2 %}
+  {% endblock %}
+</body>
+</html>
