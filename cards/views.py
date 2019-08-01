@@ -10,6 +10,7 @@ def add_card_view(request):
     if form.is_valid():
         form.save()
         form = CardForm()
+        return HttpResponseRedirect('/home/')
     context = {
         "form": form
     }
