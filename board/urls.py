@@ -4,5 +4,5 @@ from .views import board_home_view
 app_name = 'board'
 
 urlpatterns = [
-    path('',board_home_view, name ='board'),
+    path('',board_home_view, name ='home_view'),
 ]

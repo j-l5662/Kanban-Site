@@ -7,9 +7,7 @@ from cards.models import Card
 def board_home_view(request):
     querySet = Card.objects.all()
     context = {
-        "title" : obj.title, #obj
-        "data" : obj.description,
-        "stage" : obj.stage,
+        "cards" : querySet
 
     }
     return render(request, "home.html",context)

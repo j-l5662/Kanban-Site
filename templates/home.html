@@ -6,7 +6,6 @@
 <p>Hi {{request.user}}</p>
 <p> {{context}} </p>
 {% endblock %}
-
 {% block content2 %}
 <table border="3" width="100%" style="margin: 5px; margin-left: 5px;">
   <tr>
@@ -15,16 +14,43 @@
    <th class="column">Completed</th>
   </tr>
   <!-- for loop to get the data into the  -->
+  {% for card in cards %}
+  <tr>
+    {% if card.stage == "todo" %}
+      <td id = "todo_id" align="center">
+        <a href='{{ card.get_absolute_url }}'> {{card.title}} </a>
+        <p> {{card.description}} </p>
+      </td>
+      <td id = "inpr_id" align="center"></td>
+      <td id = "done_id" align="center"></td>
+    {% elif card.stage == "inpr" %}
+      <td id = "todo_id" align="center"></td>
+      <td id = "inpr_id" align="center">
+        <p> {{card.title}} </p>
+        <p> {{card.description}} </p>
+      </td>
+      <td id = "done_id" align="center"></td>
+    {% elif card.stage == "done" %}
+      <td id = "todo_id" align="center"></td>
+      <td id = "inpr_id" align="center"></td>
+      <td id = "done_id" align="center">
+        <p> {{card.title}} </p>
+        <p> {{card.description}} </p>
+      </td>
+    {% endif %}
+
+  </tr>
+  {% endfor %}
 
   <tr>
-    <td id = "card_id" align="center">{{ title }}</td>
-    <td id = "description_id" align="center">{{ data }}</td>
-    <td id = "stage_id" align="center">{{stage}}</td>
-  </tr>
-  <tr>
-    <td class = "add_card_link" align="center">Add</td>
-    <td class = "add_card_link" align="center">Add</td>
-    <td class = "add_card_link" align="center">Add</td>
+    <td class = "add_card_link" align="center">
+      <a href='/add'>Add</a>
+    </td>
+    <td class = "add_card_link" align="center">
+      <a href='/add'>Add</a>
+    </td><td class = "add_card_link" align="center">
+      <a href='/add'>Add</a>
+    </td>
   </tr>
 </table>
 

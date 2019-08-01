@@ -12,7 +12,7 @@ class Card(models.Model):
         (DONE, "Done")
     ]
 
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=30)
     description = models.TextField(blank=False,null=False)
     stage = models.CharField(max_length=4,
         choices=KANBAN_CHOICES,
@@ -22,4 +22,4 @@ class Card(models.Model):
     date_created = models.DateField(auto_now=False,auto_now_add=True)
 
     def get_absolute_url(self):
-        return reverse("card:card",kwargs={"card_id":self.id})
+        return reverse("cards:edit_view",kwargs={"id":self.id})
