@@ -1,57 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'navbar.html' %}
 <h1>KanBan Site</h1>
 <p>Hi {{request.user}}</p>
-<p> {{context}} </p>
-{% endblock %}
-{% block content2 %}
-<table border="3" width="100%" style="margin: 5px; margin-left: 5px;">
-  <tr>
-   <th class="column">TODO</th>
-   <th class="column">In-Progress</th>
-   <th class="column">Completed</th>
-  </tr>
-  <!-- for loop to get the data into the  -->
-  {% for card in cards %}
-  <tr>
-    {% if card.stage == "todo" %}
-      <td id = "todo_id" align="center">
-        <a href='{{ card.get_absolute_url }}'> {{card.title}} </a>
-        <p> {{card.description}} </p>
-      </td>
-      <td id = "inpr_id" align="center"></td>
-      <td id = "done_id" align="center"></td>
-    {% elif card.stage == "inpr" %}
-      <td id = "todo_id" align="center"></td>
-      <td id = "inpr_id" align="center">
-        <p> {{card.title}} </p>
-        <p> {{card.description}} </p>
-      </td>
-      <td id = "done_id" align="center"></td>
-    {% elif card.stage == "done" %}
-      <td id = "todo_id" align="center"></td>
-      <td id = "inpr_id" align="center"></td>
-      <td id = "done_id" align="center">
-        <p> {{card.title}} </p>
-        <p> {{card.description}} </p>
-      </td>
-    {% endif %}
+<!-- <p> {{context}} </p> -->
+<div>
+  <a href = "{% url 'login' %}" > Login </a>
+</div>
 
-  </tr>
-  {% endfor %}
-
-  <tr>
-    <td class = "add_card_link" align="center">
-      <a href='/cards/add'>Add</a>
-    </td>
-    <td class = "add_card_link" align="center">
-      <a href='/cards/add'>Add</a>
-    </td><td class = "add_card_link" align="center">
-      <a href='/cards/add'>Add</a>
-    </td>
-  </tr>
-</table>
-
+<div>
+  <a href = "{% url 'accounts:register_view' %}" > Register </a>
+</div>
 {% endblock %}

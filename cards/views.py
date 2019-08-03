@@ -27,6 +27,7 @@ def edit_card_details(request,id):
     if form.is_valid():
         form.save()
         form = CardForm()
+        return HttpResponseRedirect('/home/')
     context = {
         "form": form
     }
