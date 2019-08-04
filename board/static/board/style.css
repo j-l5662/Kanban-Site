@@ -1,22 +1,17 @@
 
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 
 #column {
    background-color: lightblue;
 }
 
 table {
-  border: 3px solid black;
+  border: solid #666;
   width: 100%;
 }
 
 th {
-   width: 25%;
    text-align: center;
    background-color: lightblue;
 }
@@ -24,4 +19,77 @@ th {
 #add_card_link {
   align: center;
   background-color: black;
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  background:#666;
+  color:#000;
+}
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+
+tr{
+  overflow:hidden;
+  padding:3em;
+}
+tr #card_item a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:30em;
+  width:30em;
+  padding:1em;
+}
+#card_item a{
+  margin:1em;
+  float:center;
+}
+tr td h2{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+tr td p{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
+
+#card_item a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+
+#card_item a:hover, #card_item a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
 }

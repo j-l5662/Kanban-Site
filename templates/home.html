@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>KanBan Site</h1>
+<h1 class="center" align="center">Sjmple KanBan</h1>
 <p>Hi {{request.user}}</p>
 <!-- <p> {{context}} </p> -->
-<div>
-  <a href = "{% url 'login' %}" > Login </a>
-</div>
+<div align="center" >
+  <form  action="{% url 'accounts:register_view' %}" method="POST"> {% csrf_token %}
+    <input type='text' name='register' placeholder="Email"/>
+    <input type='submit' value="Register"/>
+  </form>
 
-<div>
-  <a href = "{% url 'accounts:register_view' %}" > Register </a>
+</div>
+<div  align="center" >
+  <p> Already using Sjmple?
+  <a href = "{% url 'login' %}" id="login"> Login </a>
+  </p>
 </div>
 {% endblock %}

@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'board/style.css' %}">
+<link  href="http://fonts.googleapis.com/css?
+family=Reenie+Beanie:regular"
+rel="stylesheet"
+type="text/css">
+{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
 <h1>KanBan Site</h1>
-<p>Hi {{request.user}}</p>
-<p> {{context}} </p>
 {% endblock %}
 {% block content2 %}
 <table border="3" width="100%" style="margin: 5px; margin-left: 5px;">
@@ -17,27 +22,33 @@
   {% for card in zipCards %}
   <tr>
       {% if not card.0 %}
-        <td id = "todo_id" align="center"/>
+        <td id = "empty" align="center"/>
       {% else %}
-        <td id = "todo_id" align="center">
-          <a href='{{ card.0.get_absolute_url }}'> {{card.0.title}} </a>
-          <p> {{card.0.description}} </p>
+        <td id = "card_item" align="center">
+          <a href='{{ card.0.get_absolute_url }}'>
+            <h3>{{card.0.title}} </h3>
+            <p> {{card.0.description}} </p>
+           </a>
         </td>
       {% endif %}
       {% if card.1 == None %}
-        <td id = "inpr_id" align="center"/>
+        <td id = "empty" align="center"/>
       {% else %}
-      <td id = "inpr_id" align="center">
-        <a href='{{ card.1.get_absolute_url }}'> {{card.1.title}} </a>
-        <p> {{card.1.description}} </p>
+      <td id = "card_item" align="center">
+        <a href='{{ card.1.get_absolute_url }}'>
+          <h3>{{card.1.title}} </h3>
+          <p> {{card.1.description}} </p>
+        </a>
       </td>
       {% endif %}
       {% if card.2 == None %}
-        <td id = "done_id" align="center"/>
+        <td id = "empty" align="center"/>
       {% else %}
-      <td id = "done_id" align="center">
-        <a href='{{ card.2.get_absolute_url }}'> {{card.2.title}} </a>
-        <p> {{card.2.description}} </p>
+      <td id = "card_item" align="center">
+        <a href='{{ card.2.get_absolute_url }}'>
+          <h3>{{card.2.title}} </h3>
+          <p> {{card.2.description}} </p>
+        </a>
       </td>
       {% endif %}
   </tr>
