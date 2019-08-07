@@ -11,3 +11,9 @@ class CardForm(forms.ModelForm):
             'description',
             'stage'
         ]
+
+    def save(self,board):
+        card = super(CardForm,self).save(commit=False)
+        card.board = board
+        card.save()
+        return card

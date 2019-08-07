@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from cards.models import Card
+from board.models import Board
 import itertools
 # from django.apps import apps
 # Create your views here.
@@ -8,9 +9,10 @@ import itertools
 
 def board_view(request):
     if request.user.is_authenticated:
-        todoItems = Card.objects.filter(stage='todo')
-        inprogItems = Card.objects.filter(stage='inpr')
-        doneItems = Card.objects.filter(stage='done')
+        board = Board.objects.get(user=request.user)
+        todoItems = Card.objects.filter(board=board,stage='todo')
+        inprogItems = Card.objects.filter(board=board,stage='inpr')
+        doneItems = Card.objects.filter(board=board,stage='done')
 
         queryItems = list(itertools.zip_longest(todoItems,inprogItems,doneItems))
 

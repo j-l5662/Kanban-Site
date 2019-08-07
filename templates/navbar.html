@@ -1,6 +1,16 @@
-<div>
-  <a class="active" href="/home">Home</a>
-  <a href="{% url 'board:board_list_view'  %}">Board</a>
-  <a href="#setting">Settings</a>
-  <a href="{% url 'logout' %}">Sign Out</a>
+{% load static %}
+<style>
+  #title_logo {
+    color: blue;
+    display: inline;
+  }
+  #navbar {
+    margin-left:5px;
+    margin-top:5px;
+  }
+</style>
+<div id="navbar">
+  <p id="title_logo" href="/home">Sjmple Kanban</p>
+  <a href="{% url 'home:about_view' %}">About</a>
+  <a href="{% url 'home:about_view' %}">Contact</a>
 </div>

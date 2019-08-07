@@ -8,8 +8,8 @@ rel="stylesheet"
 type="text/css">
 {% endblock %}
 {% block content %}
-{% include 'navbar.html' %}
-<h1>KanBan Site</h1>
+{% include 'board/board_navbar.html' %}
+<h1>{{request.user|title}}'s Site</h1>
 {% endblock %}
 {% block content2 %}
 <table border="3" width="100%" style="margin: 5px; margin-left: 5px;">

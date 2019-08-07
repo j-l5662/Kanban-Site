@@ -2,13 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Card
 from .forms import CardForm
+from board.models import Board
 # Create your views here.
 
 
 def add_card_view(request):
     form = CardForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        print(request.user)
+        board = Board.objects.get(user=request.user)
+        print(board)
+        form.save(board)
         form = CardForm()
         return HttpResponseRedirect('/home/')
     context = {
@@ -25,7 +29,9 @@ def edit_card_details(request,id):
     obj = Card.objects.get(id=id)
     form = CardForm(request.POST or None,instance=obj)
     if form.is_valid():
-        form.save()
+        board = Board.objects.get(user=request.user)
+        print(board)
+        form.save(board)
         form = CardForm()
         return HttpResponseRedirect('/home/')
     context = {

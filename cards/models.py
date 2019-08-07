@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from board.models import Board
 # Create your models here.
 
 class Card(models.Model):
@@ -11,7 +12,7 @@ class Card(models.Model):
         (IN_PROGRESS, "In-Progress"),
         (DONE, "Done")
     ]
-
+    board=models.ForeignKey(Board,on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
     description = models.TextField(blank=False,null=False)
     stage = models.CharField(max_length=4,

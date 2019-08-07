@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate
 from .forms import UserForm
+from board.models import Board
 # Create your views here.
 
 def user_register_view(request):
@@ -20,10 +21,11 @@ def user_register_view(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username,password=raw_password)
             login(request,user)
-            print("loggin")
+            Board.objects.create(user=user,title=username+" Board")
+            print("logging in")
             return HttpResponseRedirect('/board/')
         else:
-            print("invliad loggin")
+            print("Invalid Information")
         context = {
             'form': form
         }
