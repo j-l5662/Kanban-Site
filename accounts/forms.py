@@ -13,3 +13,13 @@ class UserForm(UserCreationForm):
             'password1',
             'password2'
         ]
+        labels = {
+            'username' : "User"
+        }
+
+
+        help_texts = {
+            'password1': None,
+        }
+    # def __init__(self, user, *args, **kwargs):
+    #     super(UserForm,)

@@ -13,7 +13,11 @@ def user_register_view(request):
         'password1': "",
         'password2': "",
     }
+    print(email)
     form = UserForm(request.POST or None,initial=initial_data)
+    context = {
+        'form': form
+    }
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -22,12 +26,10 @@ def user_register_view(request):
             user = authenticate(username=username,password=raw_password)
             login(request,user)
             Board.objects.create(user=user,title=username+" Board")
-            print("logging in")
             return HttpResponseRedirect('/board/')
         else:
             print("Invalid Information")
-        context = {
-            'form': form
-        }
+
         return render(request,'registration/registration.html',context)
-    # return render(request,'registration/registration.html',context)
+
+    return render(request,'registration/registration.html',context)
