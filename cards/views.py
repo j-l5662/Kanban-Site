@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from .models import Card
 from .forms import CardForm
 from board.models import Board
@@ -7,6 +7,8 @@ from board.models import Board
 
 
 def add_card_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseNotFound('<h1>Page Not Found</h1>')
     form = CardForm(request.POST or None)
     if form.is_valid():
         print(request.user)
@@ -14,7 +16,7 @@ def add_card_view(request):
         print(board)
         form.save(board)
         form = CardForm()
-        return HttpResponseRedirect('/home/')
+        return HttpResponseRedirect('/board/')
     context = {
         "form": form
     }

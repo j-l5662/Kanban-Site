@@ -1,0 +1,12 @@
+body {
+  background-image: url('/static/img/email-pattern.png')
+}
+
+#add_card_form {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input[value='Save'] {
+  margin-top: 40px;
+}

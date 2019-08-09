@@ -18,8 +18,8 @@ def board_view(request):
 
         context = {
             "zipCards" : queryItems
-
         }
+        
         return render(request, "board/board_detail.html",context)
     else:
         return HttpResponseNotFound('<h1>Page not found</h1>')

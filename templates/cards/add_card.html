@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'cards/style.css' %}">
+{% endblock %}
 {% block content %}
 
-<form method='POST'> {% csrf_token %}
-  {{form.as_p}}
-  <input type='submit' value='Save'/>
-  <button type='submit' value='Cancel'>
-    <a href="/home">Cancel</a>
-  </button>
-</form>
+<div id="add_card_form">
+  <form method='POST'> {% csrf_token %}
+    {% for field in form %}
+    <p>
+      {{ field.label_tag}} <br> {{ field }}
 
+    </p>
+    {% endfor %}
+    <input type='submit' value='Save'/>
+    <button type='submit' value='Cancel'>
+      <a href="/board">Cancel</a>
+    </button>
+  </form>
+</div>
 {% endblock %}

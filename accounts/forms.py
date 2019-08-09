@@ -14,12 +14,12 @@ class UserForm(UserCreationForm):
             'password2'
         ]
         labels = {
-            'username' : "User"
+            'username' : "UserName"
         }
-
-
-        help_texts = {
+        help_text = {
             'password1': None,
         }
     # def __init__(self, user, *args, **kwargs):
-    #     super(UserForm,)
+    #     super(UserForm,self).__init__(*args,**kwargs)
+    #
+    #     self.fields['password1'].help_text = None
