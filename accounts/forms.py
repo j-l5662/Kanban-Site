@@ -17,8 +17,9 @@ class UserForm(UserCreationForm):
             'username' : "UserName"
         }
         help_text = {
-            'password1': None,
+            'password1': "",
         }
+
     # def __init__(self, user, *args, **kwargs):
     #     super(UserForm,self).__init__(*args,**kwargs)
     #

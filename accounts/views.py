@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate
+from django.core.validators import validate_email
 from .forms import UserForm
 from board.models import Board
 # Create your views here.
 
 def user_register_view(request):
     email = request.POST.get('register')
+    context = {
+
+    }
+    if email is None or email is "":
+        return render(request,'home.html',context)
+    try:
+        validate_email(email)
+    except:
+        print("Invalid Email")
+        return HttpResponseRedirect('/home/')
+
     initial_data = {
         'username': "",
         'email': email,

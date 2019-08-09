@@ -22,6 +22,6 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('cards/',include('cards.urls')),
     path('board/',include('board.urls')),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
     path('about/',about_view,name='about_view'),
 ]
