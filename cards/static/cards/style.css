@@ -1,12 +1,52 @@
-body {
-  background-image: url('/static/img/email-pattern.png')
-}
-
-#add_card_form {
-  text-align: center;
-  margin-top: 50px;
-}
 
 input[value='Save'] {
   margin-top: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/static/img/email-pattern.png')
+}
+#cancel_button {
+    text-align: left;
+    margin-left: -30px;
+}
+#cancel_button a{
+  color: red;
+  font-size: large;
+  margin-top: 10px;
+  display: inline-block;
+}
+#form {
+  display:inline;
+}
+#card_col
+{
+  margin: 0 -5px;
+  text-align: center;
+}
+
+#card_col:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#card_form {
+  float: inherit;
+  display: inline-block;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 0px 60px 10px;
+  max-width: 529px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+input[value='Save'] {
+  margin-right: 70px;
 }

@@ -12,12 +12,12 @@ def user_register_view(request):
 
     }
     if email is None or email is "":
-        return render(request,'home.html',context)
+        return HttpResponseRedirect('/')
     try:
         validate_email(email)
     except:
         print("Invalid Email")
-        return HttpResponseRedirect('/home/')
+        return HttpResponseRedirect('/')
 
     initial_data = {
         'username': "",
@@ -26,7 +26,7 @@ def user_register_view(request):
         'password2': "",
     }
     print(email)
-    form = UserForm(request.POST or None,initial=initial_data)
+    form = UserForm(request.POST or None)
     context = {
         'form': form
     }
