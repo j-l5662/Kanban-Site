@@ -8,9 +8,7 @@ from board.models import Board
 
 def user_register_view(request):
     email = request.POST.get('register')
-    context = {
-
-    }
+    print(email)
     if email is None or email is "":
         return HttpResponseRedirect('/')
     try:
@@ -18,18 +16,15 @@ def user_register_view(request):
     except:
         print("Invalid Email")
         return HttpResponseRedirect('/')
-
     initial_data = {
-        'username': "",
         'email': email,
-        'password1': "",
-        'password2': "",
     }
-    print(email)
-    form = UserForm(request.POST or None)
+    form = UserForm(initial=initial_data)
+    print(initial_data)
     context = {
         'form': form
     }
+    print(form)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
