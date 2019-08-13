@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "KanbanSite.settings",
+        "profile_name": "default",
+        "project_name": "kanbansite",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-2bqhd3izd"
+    }
+}

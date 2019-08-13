@@ -28,7 +28,7 @@ SECRET_KEY = SECRET_KEY_LOCAL
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','gdhrkt28d7.execute-api.us-east-1.amazonaws.com']
 
 
 # Application definition
