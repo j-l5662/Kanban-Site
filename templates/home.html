@@ -12,7 +12,7 @@
 <p align="center">A simple Kanban board to visualize your work.</p>
 
 <div align="center" >
-  <form action="{% url 'accounts:register_view' %}" method="POST"> {% csrf_token %}
+  <form action="{% url 'home:home_view' %}" method="POST"> {% csrf_token %}
     <input type='text' name='register' placeholder="Email"/>
     <input type='submit' value="Register"/>
   </form>
