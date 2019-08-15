@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.validators import validate_email
+from accounts.forms import UserForm
 # Create your views here.
 
 
@@ -16,8 +17,12 @@ def home_view(request):
             return HttpResponseRedirect('/')
         try:
             validate_email(email)
-            context = {
+            initial_data = {
                 'email': email,
+            }
+            form = UserForm(initial=initial_data)
+            context = {
+                'form': form,
             }
             return render(request,'registration/registration.html',context)
         except:
