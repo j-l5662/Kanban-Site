@@ -1,6 +1,9 @@
 #register_form {
   text-align: center;
 }
+#login_form {
+  text-align: center;
+}
 
 input[type=submit]:hover {
   background: #007cc2;
