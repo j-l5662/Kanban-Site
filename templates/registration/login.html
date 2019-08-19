@@ -1,22 +1,24 @@
 {% load static %}
 <html>
 <link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
-  <h2 align ="center">Login Page</h2>
-  <div id="login_form">
-    <form method="POST"> {% csrf_token %}
-      {% for field in form %}
-      <p>
-        {{ field.label_tag }}
-        {{ field }}
-        {% for error in field.errors %}
-          {% if field.help_text %}
-            <small style="color: grey">{{ field.help_text }}</small>
-          {% endif %}
-          <p align='center' style="color: red">{{ error }}</p>
+  <div align=' center'id="login_page">
+    <h2>Login Page</h2>
+    <div id="login_form">
+      <form method="POST"> {% csrf_token %}
+        {% for field in form %}
+        <p>
+          {{ field.label_tag }}
+          {{ field }}
+          {% for error in field.errors %}
+            {% if field.help_text %}
+              <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            <p align='center' style="color: red">{{ error }}</p>
+          {% endfor %}
+          </p>
         {% endfor %}
-        </p>
-      {% endfor %}
-      <button type="submit">Login</button>
-    </form>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   </div>
 </html>

@@ -3,6 +3,15 @@
 }
 #login_form {
   text-align: center;
+  float: inherit;
+  display: inline-block;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 0px 60px 10px;
+  max-width: 529px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 input[type=submit]:hover {
@@ -12,4 +21,27 @@ input[type=submit]:hover {
 
 body {
   background-image: url('/static/img/email-pattern.png')
+}
+
+#register_form {
+  text-align: center;
+  float: inherit;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 0px 60px 10px;
+  max-width: 529px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#field_label {
+    display: inline-block;
+    text-align: left;
+}
+
+#field {
+  display: inline;
+  text-align: right;
 }
