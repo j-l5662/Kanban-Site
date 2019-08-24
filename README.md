@@ -25,3 +25,7 @@ To create your own Kanban Board, register with a email address in the home page.
 To start the Django project, run the following command
 
 <b>python manage.py runserver</b>
+
+# Background Picture
+
+Credit: https://www.toptal.com/designers/subtlepatterns/email-pattern/
