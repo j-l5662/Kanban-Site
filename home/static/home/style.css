@@ -10,3 +10,26 @@ h1 {
 body {
   background-image: url('/static/img/email-pattern.png');
 }
+
+.professional_container {
+  max-width: 960px;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+#professional_id {
+  text-align: left;
+  font-family: "Courier New";
+  font-weight: bold;
+}
+
+hr {
+  color: red;
+  border: 1px solid #6495ED;
+  margin-block-start: 0.5em;
+  margin-inline-start: auto;
+}
+
+#aboutme_p_id {
+  font-size: 110%;
+}

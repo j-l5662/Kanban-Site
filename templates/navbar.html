@@ -3,6 +3,7 @@
   #title_logo {
     color: blue;
     display: inline;
+    white-space: nowrap;
   }
   #navbar {
     margin-left:5px;
@@ -10,7 +11,6 @@
   }
 </style>
 <div id="navbar">
-  <p id="title_logo" href="/home">Sjmple Kanban</p>
+  <a id="title_logo" href="/">Sjmple Kanban</a>
   <a href="{% url 'home:about_view' %}">About</a>
-  <a href="{% url 'home:about_view' %}">Contact</a>
 </div>

@@ -33,7 +33,8 @@ def home_view(request):
 
 
 def about_view(request):
+    text = "Johann Lau is a computer science masters student at Georgia Tech that is willing to learn and grow as a software developer. His experience with software design and testing, solution architect, and cybersecurity provides an holistic and technical approach to problem solving."
     context = {
-
+        "about_me" : text
     }
     return render(request,"about/about_me.html",context)
